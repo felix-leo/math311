@@ -17,7 +17,7 @@ fixedPoint = function(x0, g, eps=1e-7, n=30, iter=FALSE) {
   
   failureMode = TRUE
   p_Old = x0 #first guess
-  labelName = c("p_Old", "abs (P - p_Old)") #make labelName as a vector
+  labelName = c("P_init", "abs(P - P_init)") #make labelName as a vector
   perIteration = matrix(c(x0,0), 1, length(labelName))  #matrix to save iterations
   
   for (i in 1:n) {
@@ -27,7 +27,7 @@ fixedPoint = function(x0, g, eps=1e-7, n=30, iter=FALSE) {
     p_Old = p
   }
   
-  if (failureMode) warning(paste("Failed to converge after",i,"iterations"))
+  if (failureMode) warning(paste("Failed to converge after", i, "iterations"))
   if (iter) { 
     dimnames(perIteration) = list(0:i, labelName); 
     p=perIteration # swap the answer to per iteration matrix

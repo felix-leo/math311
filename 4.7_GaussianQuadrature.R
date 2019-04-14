@@ -147,3 +147,5 @@ gaussianquad = function(a,b,f,n) {
   return(int)
 }
 
+# f=function(x) {x^2*log(x)}
+# gaussianquad(1, 1.5, f, 5)

@@ -35,17 +35,17 @@ newtons = function(p0, f, fp, eps=1e-7, n=50, iter=FALSE) {
 ## Testing the code
 ## Function to find the zero of
 
-#f = function(x) { x^2-3 }
-#fp = function(x) { 2*x }
+f = function(x) { x^2-3 }
+fp = function(x) { 2*x }
 
 ## Examples:
-newtons(1)
+newtons(1, f, fp)
 
-bb=newtons(1,iter=TRUE)
+bb=newtons(1, iter=TRUE)
 bb
-noquote(formatC(bb,digits=11,format="f")) #error is formatted differently
+noquote(formatC(bb, digits=11, format="f")) #error is formatted differently
 
-newtons(1,1e-15)
-newtons(1,1e-15,100)
-newtons(1,1e-15,100,iter=TRUE)
+newtons(1, f, fp, 1e-15)
+newtons(1, f, fp, 1e-15, 100)
+newtons(1, f, fp, 1e-15, 100, iter=TRUE)
 ############################################################################
